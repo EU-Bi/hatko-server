@@ -5,7 +5,7 @@ export type UserSchema = HydratedDocument<User>;
 
 @Schema()
 export class User {
-  @Prop()
+  @Prop({ unique: [true, 'Duplicate email entered'] })
   email: string;
   @Prop()
   password: string;
